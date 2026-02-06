@@ -150,7 +150,6 @@ const TechStack = () => {
           {categories.map((cat, catIndex) => (
             <motion.div key={catIndex} variants={itemVariants}>
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-2xl">{cat.icon}</span>
                 <h3 className="text-xl font-bold text-white">{cat.title}</h3>
                 <div className={`flex-1 h-[1px] bg-gradient-to-r ${cat.color} opacity-20`} />
               </div>

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { FaCode, FaShieldAlt, FaServer, FaDumbbell } from "react-icons/fa";
+import { FaCode, FaShieldAlt, FaServer } from "react-icons/fa";
 import { HiAcademicCap, HiLightningBolt } from "react-icons/hi";
 
 const About = () => {
@@ -24,9 +24,8 @@ const About = () => {
 
   const stats = [
     { label: "Tecnologías", value: "15+", icon: FaCode },
-    { label: "Años Estudiando", value: "4+", icon: HiAcademicCap },
+    { label: "Años Estudiando", value: "5+", icon: HiAcademicCap },
     { label: "Proyectos", value: "10+", icon: HiLightningBolt },
-    { label: "Café/Día", value: "∞", icon: FaDumbbell },
   ];
 
   const interests = [
@@ -45,7 +44,7 @@ const About = () => {
     {
       icon: FaServer,
       title: "Sistemas ERP",
-      description: "Análisis técnico con ERP SOFTLAND, T-SQL y optimización de procesos empresariales.",
+      description: "Análisis técnico con ERP SOFTLAND, automatizaciones internas con VS Code, T-SQL y optimización de procesos empresariales.",
       gradient: "from-green-400 to-cyan-500",
     },
   ];
@@ -162,7 +161,7 @@ const About = () => {
         {/* Stats */}
         <motion.div
           variants={itemVariants}
-          className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 max-w-3xl mx-auto"
         >
           {stats.map((stat, i) => (
             <motion.div

@@ -3,7 +3,6 @@ import {
   FaLinkedinIn,
   FaInstagram,
   FaGithub,
-  FaHeart,
   FaChevronUp,
 } from "react-icons/fa";
 
@@ -93,19 +92,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="text-center">
           <p className="text-gray-600 text-sm">
-            © {currentYear} Facundo Blangetti. Hecho con{" "}
-            <motion.span
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 1, repeat: Infinity }}
-              className="inline-block"
-            >
-              <FaHeart className="inline text-red-500" size={12} />
-            </motion.span>{" "}
-            y mucho{" "}
-            <span className="text-cyan-400 font-mono text-xs">{"<código />"}</span>
-          </p>
-          <p className="text-gray-700 text-xs mt-2 font-mono">
-            React • TypeScript • Framer Motion • Three.js • Tailwind CSS
+            © {currentYear} Facundo Blangetti.
           </p>
         </div>
       </div>

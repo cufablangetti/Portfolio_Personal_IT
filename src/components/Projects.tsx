@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { FaGithub, FaExternalLinkAlt, FaFolder } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaFolder, FaLock } from "react-icons/fa";
 
 interface Project {
   title: string;
@@ -32,24 +32,6 @@ const Projects = () => {
   // Placeholder projects - these will be replaced with actual projects
   const projects: Project[] = [
     {
-      title: "Sistema ERP SOFTLAND",
-      description:
-        "Configuración, personalización y optimización de sistema ERP empresarial. Gestión de bases de datos con T-SQL y diseño de procesos empresariales.",
-      tags: ["T-SQL", "ERP", "Análisis", "SQL Server"],
-      featured: true,
-      color: "#00d9ff",
-    },
-    {
-      title: "Portfolio Personal",
-      description:
-        "Portfolio web interactivo con efectos visuales avanzados, partículas 3D, animaciones fluidas y diseño glassmorphism. Construido con React, Three.js y Framer Motion.",
-      tags: ["React", "TypeScript", "Three.js", "Framer Motion", "Tailwind"],
-      github: "https://github.com/cufablangetti",
-      live: "#",
-      featured: true,
-      color: "#a855f7",
-    },
-    {
       title: "API REST Full Stack",
       description:
         "Desarrollo de APIs REST genéricas con documentación en Swagger, testing con Postman y arquitectura escalable.",
@@ -61,17 +43,10 @@ const Projects = () => {
     {
       title: "App Android",
       description:
-        "Aplicación móvil Android nativa desarrollada con Android Studio y Java, integrando APIs REST y base de datos local.",
-      tags: ["Android", "Java", "Android Studio", "SQLite"],
+        "Aplicación móvil multiplataforma desarrollada con Flutter y Dart para Android. Integración directa con el sistema ERP de la empresa, interfaz Material Design, manejo de estado con setState y navegación con Navigator. Compilada en Windows, genera APK de producción (v1.10.45+53).",
+      tags: ["Flutter", "Dart", "Android", "Material Design", "ERP", "VS Code"],
       github: "https://github.com/cufablangetti",
       color: "#10b981",
-    },
-    {
-      title: "Dashboard Business Intelligence",
-      description:
-        "Tableros de análisis de datos empresariales con QlikView para visualización de KPIs y métricas de negocio.",
-      tags: ["QlikView", "BI", "Datos", "Dashboard"],
-      color: "#3b82f6",
     },
     {
       title: "Administración de Redes",
@@ -116,6 +91,177 @@ const Projects = () => {
 
         {/* Featured Projects */}
         <div className="space-y-8 mb-16">
+
+          {/* ERP SOFTLAND - Custom Card */}
+          <motion.div
+            variants={itemVariants}
+            whileHover={{ y: -5 }}
+            className="glass-card p-5 sm:p-8 relative overflow-hidden group"
+          >
+            {/* Top accent */}
+            <div
+              className="absolute top-0 left-0 right-0 h-[2px] opacity-60 group-hover:opacity-100 transition-opacity"
+              style={{
+                background: `linear-gradient(90deg, transparent, #f59e0b, transparent)`,
+              }}
+            />
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Left Column - Description */}
+              <div>
+                <span className="text-xs font-mono text-amber-400 tracking-widest uppercase mb-2 block">
+                  Proyecto Destacado
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 group-hover:text-amber-400 transition-colors">
+                  Sistema ERP SOFTLAND
+                </h3>
+                <p className="text-gray-300 leading-relaxed mb-6">
+                  Configuración, personalización y automatización del sistema ERP de la empresa.
+                  Desarrollo de consultas avanzadas en T-SQL, generación de reportes, integración
+                  de módulos y creación de soluciones internas para optimizar procesos empresariales.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {["T-SQL", "ERP SOFTLAND", "Automatización", "Reportes", "APIs", "Python", "Android"].map(
+                    (tag) => (
+                      <span
+                        key={tag}
+                        className="px-3 py-1 text-xs font-mono rounded-full border transition-colors border-amber-500/30 text-amber-300 hover:bg-amber-500/10"
+                      >
+                        {tag}
+                      </span>
+                    )
+                  )}
+                </div>
+              </div>
+
+              {/* Right Column - Internal Projects */}
+              <div className="bg-white/[0.03] border border-white/10 rounded-xl p-5 sm:p-6">
+                <h4 className="text-sm font-mono text-amber-400 tracking-widest uppercase mb-4 flex items-center gap-2">
+                  <FaFolder className="text-amber-400" />
+                  Proyectos Internos Desarrollados
+                </h4>
+                <ul className="space-y-3">
+                  {[
+                    "App de monitoreo de tractores",
+                    "Chat Bot de pedidos / Automatización de ERP y Mails",
+                    "Chat Bot empresa Oliver / Automatización de ERP y Mails",
+                    "App de trackeo de ventas",
+                    "Automatización para inserción masiva de viáticos",
+                    "App Android para rastro y geolocalización de tractores (hoja de ruta)",
+                  ].map((item, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-start gap-3 text-gray-300 text-sm"
+                    >
+                      <span className="mt-1 min-w-[6px] h-[6px] rounded-full bg-amber-400/80" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Confidentiality Notice */}
+                <div className="mt-5 pt-4 border-t border-white/10 flex items-start gap-3">
+                  <FaLock className="text-amber-400/70 mt-0.5 shrink-0" />
+                  <p className="text-xs text-gray-400 italic leading-relaxed">
+                    Estos proyectos son confidenciales debido a que son trabajos internos de la
+                    empresa y exponen datos privados.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* FRONT END MAUL - Custom Card */}
+          <motion.div
+            variants={itemVariants}
+            whileHover={{ y: -5 }}
+            className="glass-card p-5 sm:p-8 relative overflow-hidden group"
+          >
+            {/* Top accent */}
+            <div
+              className="absolute top-0 left-0 right-0 h-[2px] opacity-60 group-hover:opacity-100 transition-opacity"
+              style={{
+                background: `linear-gradient(90deg, transparent, #3b82f6, transparent)`,
+              }}
+            />
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Left Column - Description */}
+              <div>
+                <span className="text-xs font-mono text-blue-400 tracking-widest uppercase mb-2 block">
+                  Proyecto Destacado
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors">
+                  Desarrollo Front End — MAUL
+                </h3>
+                <p className="text-gray-300 leading-relaxed mb-6">
+                  Durante 6 meses desarrollé en React todo el Front End de una futura aplicación
+                  de Play Store para la empresa MAUL. El proyecto incluye una interfaz moderna,
+                  responsiva y optimizada para la mejor experiencia de usuario. Además, realicé
+                  la landing page de la empresa que actualmente se encuentra en producción.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {["React", "JavaScript", "CSS", "Responsive Design", "UI/UX", "Landing Page"].map(
+                    (tag) => (
+                      <span
+                        key={tag}
+                        className="px-3 py-1 text-xs font-mono rounded-full border transition-colors border-blue-500/30 text-blue-300 hover:bg-blue-500/10"
+                      >
+                        {tag}
+                      </span>
+                    )
+                  )}
+                </div>
+              </div>
+
+              {/* Right Column - Details & Link */}
+              <div className="bg-white/[0.03] border border-white/10 rounded-xl p-5 sm:p-6 flex flex-col justify-between">
+                <div>
+                  <h4 className="text-sm font-mono text-blue-400 tracking-widest uppercase mb-4 flex items-center gap-2">
+                    <FaFolder className="text-blue-400" />
+                    Detalles del Proyecto
+                  </h4>
+                  <ul className="space-y-3">
+                    {[
+                      "Front End completo de aplicación móvil (futura app en Play Store)",
+                      "Landing page corporativa en producción",
+                      "Desarrollo con React durante 6 meses",
+                      "Diseño responsivo y experiencia de usuario optimizada",
+                    ].map((item, idx) => (
+                      <li
+                        key={idx}
+                        className="flex items-start gap-3 text-gray-300 text-sm"
+                      >
+                        <span className="mt-1 min-w-[6px] h-[6px] rounded-full bg-blue-400/80" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Landing page link */}
+                <div className="mt-5 pt-4 border-t border-white/10 flex flex-col gap-3">
+                  <a
+                    href="http://maul.com.ar/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm font-mono transition-colors"
+                  >
+                    <FaExternalLinkAlt className="text-xs" />
+                    maul.com.ar — Landing Page en producción
+                  </a>
+                  <div className="flex items-start gap-3">
+                    <FaLock className="text-blue-400/70 mt-0.5 shrink-0" />
+                    <p className="text-xs text-gray-400 italic leading-relaxed">
+                      La aplicación completa es confidencial. A futuro estará disponible
+                      dentro de la misma landing page.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
           {featuredProjects.map((project, i) => (
             <motion.div
               key={i}

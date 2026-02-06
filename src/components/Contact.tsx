@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import emailjs from "@emailjs/browser";
 import {
   FaLinkedinIn,
   FaInstagram,
@@ -12,6 +13,7 @@ import {
 
 const Contact = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -20,6 +22,7 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -37,14 +40,28 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(false);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitted(true);
-      setFormData({ name: "", email: "", subject: "", message: "" });
-      setTimeout(() => setSubmitted(false), 3000);
-    }, 1500);
+    emailjs
+      .sendForm(
+        "service_bzly5n5",
+        "template_ve4q2pe",
+        formRef.current!,
+        "Dw8hMcg2H6Jj2tsDO"
+      )
+      .then(
+        () => {
+          setIsSubmitting(false);
+          setSubmitted(true);
+          setFormData({ name: "", email: "", subject: "", message: "" });
+          setTimeout(() => setSubmitted(false), 5000);
+        },
+        () => {
+          setIsSubmitting(false);
+          setError(true);
+          setTimeout(() => setError(false), 5000);
+        }
+      );
   };
 
   const socials = [
@@ -185,7 +202,7 @@ const Contact = () => {
 
           {/* Right - Contact Form */}
           <motion.div variants={itemVariants}>
-            <form onSubmit={handleSubmit} className="glass-card p-5 sm:p-8 space-y-5">
+            <form ref={formRef} onSubmit={handleSubmit} className="glass-card p-5 sm:p-8 space-y-5">
               <div className="flex items-center gap-2 mb-2">
                 <div className="w-3 h-3 rounded-full bg-red-500" />
                 <div className="w-3 h-3 rounded-full bg-yellow-500" />
@@ -202,6 +219,7 @@ const Contact = () => {
                   </label>
                   <input
                     type="text"
+                    name="from_name"
                     value={formData.name}
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
@@ -217,6 +235,7 @@ const Contact = () => {
                   </label>
                   <input
                     type="email"
+                    name="reply_to"
                     value={formData.email}
                     onChange={(e) =>
                       setFormData({ ...formData, email: e.target.value })
@@ -234,6 +253,7 @@ const Contact = () => {
                 </label>
                 <input
                   type="text"
+                  name="subject"
                   value={formData.subject}
                   onChange={(e) =>
                     setFormData({ ...formData, subject: e.target.value })
@@ -249,6 +269,7 @@ const Contact = () => {
                   {"// Mensaje"}
                 </label>
                 <textarea
+                  name="message"
                   value={formData.message}
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
@@ -268,6 +289,8 @@ const Contact = () => {
                 className={`w-full py-4 rounded-xl font-semibold text-lg flex items-center justify-center gap-3 transition-all duration-300 ${
                   submitted
                     ? "bg-green-500/20 border border-green-500/30 text-green-400"
+                    : error
+                    ? "bg-red-500/20 border border-red-500/30 text-red-400"
                     : "bg-gradient-to-r from-cyan-500 to-purple-600 text-white hover:shadow-lg hover:shadow-cyan-500/20"
                 }`}
               >
@@ -279,6 +302,8 @@ const Contact = () => {
                   />
                 ) : submitted ? (
                   <>✓ Mensaje Enviado</>
+                ) : error ? (
+                  <>✗ Error al enviar, intenta de nuevo</>
                 ) : (
                   <>
                     <FaPaperPlane /> Enviar Mensaje

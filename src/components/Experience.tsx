@@ -4,6 +4,7 @@ import {
   FaBriefcase,
   FaDatabase,
   FaCogs,
+  FaCode,
   FaUsers,
   FaCheckCircle,
   FaShieldAlt,
@@ -30,6 +31,7 @@ const Experience = () => {
   const tasks = [
     { icon: FaDatabase, text: "Gestión de bases de datos y optimización con Transact-SQL" },
     { icon: FaCogs, text: "Configuración y personalización del ERP SOFTLAND" },
+    { icon: FaCode, text: "Desarrollo de automatizaciones y programaciones internas con VS Code" },
     { icon: FaCheckCircle, text: "Testing funcional y validación de implementaciones" },
     { icon: FaUsers, text: "Soporte técnico y capacitación a usuarios finales" },
     { icon: FaBriefcase, text: "Diseño y optimización de procesos empresariales" },
@@ -166,12 +168,12 @@ const Experience = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white mb-1">
-                  Ingeniería en Sistemas y Programación
+                  Ingeniería en Sistemas
                 </h3>
-                <p className="text-green-400 font-mono text-sm">En curso</p>
+                <p className="text-green-400 font-mono text-sm">Último año en curso</p>
                 <p className="text-gray-400 mt-2 text-sm leading-relaxed">
                   Formación integral en desarrollo de software, arquitectura de sistemas,
-                  bases de datos y gestión de proyectos tecnológicos.
+                  bases de datos y gestión de proyectos tecnológicos. Actualmente cursando el último año de la carrera.
                 </p>
               </div>
             </div>
