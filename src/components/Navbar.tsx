@@ -16,6 +16,18 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
 
+  const handleMobileNavClick = (href: string) => {
+    setIsOpen(false);
+    const targetId = href.replace("#", "");
+    // Small delay so the menu close animation doesn't interfere with scroll
+    setTimeout(() => {
+      const el = document.getElementById(targetId);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 150);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -132,12 +144,32 @@ const Navbar = () => {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
-                  onClick={() => setIsOpen(false)}
-                  className="block px-4 py-3 text-gray-300 hover:text-cyan-400 hover:bg-white/5 rounded-lg transition-all duration-300"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleMobileNavClick(item.href);
+                  }}
+                  className={`block px-4 py-3 hover:bg-white/5 rounded-lg transition-all duration-300 ${
+                    activeSection === item.href.replace("#", "")
+                      ? "text-cyan-400 bg-white/5"
+                      : "text-gray-300 hover:text-cyan-400"
+                  }`}
                 >
                   {item.name}
                 </motion.a>
               ))}
+              <motion.a
+                href="#contact"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: navItems.length * 0.05 }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleMobileNavClick("#contact");
+                }}
+                className="block mt-4 px-4 py-3 text-center text-sm font-semibold text-black bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300"
+              >
+                Hablemos
+              </motion.a>
             </div>
           </motion.div>
         )}
