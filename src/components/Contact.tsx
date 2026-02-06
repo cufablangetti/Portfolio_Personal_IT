@@ -51,30 +51,30 @@ const Contact = () => {
     {
       icon: FaLinkedinIn,
       name: "LinkedIn",
-      href: "https://www.linkedin.com/feed/",
+      href: "https://www.linkedin.com/in/facundo-blangetti-a58ba0233?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       color: "#0077B5",
       desc: "Conectemos profesionalmente",
     },
     {
       icon: FaInstagram,
       name: "Instagram",
-      href: "https://www.instagram.com/facu_blangetti",
+      href: "https://www.instagram.com/facu_blangetti?igsh=MWdiMTllcDd4ajdxeg==",
       color: "#E4405F",
       desc: "@facu_blangetti",
     },
     {
       icon: FaGithub,
       name: "GitHub",
-      href: "https://github.com/",
+      href: "https://github.com/cufablangetti",
       color: "#ffffff",
       desc: "Mi código open source",
     },
     {
       icon: FaEnvelope,
       name: "Email",
-      href: "mailto:tu-email@ejemplo.com",
+      href: "mailto:facublangettit@gmail.com",
       color: "#D14836",
-      desc: "Envíame un correo",
+      desc: "facublangettit@gmail.com",
     },
   ];
 

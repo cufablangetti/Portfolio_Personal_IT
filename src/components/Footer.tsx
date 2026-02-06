@@ -66,12 +66,12 @@ const Footer = () => {
           {/* Socials */}
           <div className="flex justify-center md:justify-end gap-3">
             {[
-              { icon: FaLinkedinIn, href: "https://www.linkedin.com/feed/" },
+              { icon: FaLinkedinIn, href: "https://www.linkedin.com/in/facundo-blangetti-a58ba0233?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
               {
                 icon: FaInstagram,
-                href: "https://www.instagram.com/facu_blangetti",
+                href: "https://www.instagram.com/facu_blangetti?igsh=MWdiMTllcDd4ajdxeg==",
               },
-              { icon: FaGithub, href: "https://github.com/" },
+              { icon: FaGithub, href: "https://github.com/cufablangetti" },
             ].map((social, i) => (
               <motion.a
                 key={i}

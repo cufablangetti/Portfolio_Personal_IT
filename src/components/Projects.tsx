@@ -44,7 +44,7 @@ const Projects = () => {
       description:
         "Portfolio web interactivo con efectos visuales avanzados, partículas 3D, animaciones fluidas y diseño glassmorphism. Construido con React, Three.js y Framer Motion.",
       tags: ["React", "TypeScript", "Three.js", "Framer Motion", "Tailwind"],
-      github: "https://github.com/",
+      github: "https://github.com/cufablangetti",
       live: "#",
       featured: true,
       color: "#a855f7",
@@ -54,7 +54,7 @@ const Projects = () => {
       description:
         "Desarrollo de APIs REST genéricas con documentación en Swagger, testing con Postman y arquitectura escalable.",
       tags: ["Node.js", "API REST", "Swagger", "Postman"],
-      github: "https://github.com/",
+      github: "https://github.com/cufablangetti",
       featured: true,
       color: "#ec4899",
     },
@@ -63,7 +63,7 @@ const Projects = () => {
       description:
         "Aplicación móvil Android nativa desarrollada con Android Studio y Java, integrando APIs REST y base de datos local.",
       tags: ["Android", "Java", "Android Studio", "SQLite"],
-      github: "https://github.com/",
+      github: "https://github.com/cufablangetti",
       color: "#10b981",
     },
     {
@@ -265,7 +265,7 @@ const Projects = () => {
             // Más proyectos próximamente...
           </p>
           <motion.a
-            href="https://github.com/"
+            href="https://github.com/cufablangetti"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}

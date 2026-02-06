@@ -129,7 +129,7 @@ const Hero = () => {
             whileTap={{ scale: 0.95 }}
             className="group relative px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full text-white font-semibold text-base sm:text-lg overflow-hidden"
           >
-            <span className="relative z-10 flex items-center gap-2">
+            <span className="relative z-10 flex items-center justify-center gap-2">
               Ver Proyectos
               <motion.span
                 animate={{ x: [0, 5, 0] }}
@@ -162,17 +162,17 @@ const Hero = () => {
           {[
             {
               icon: FaLinkedinIn,
-              href: "https://www.linkedin.com/feed/",
+              href: "https://www.linkedin.com/in/facundo-blangetti-a58ba0233?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
               color: "hover:bg-blue-600/20 hover:border-blue-500/50 hover:text-blue-400",
             },
             {
               icon: FaInstagram,
-              href: "https://www.instagram.com/facu_blangetti",
+              href: "https://www.instagram.com/facu_blangetti?igsh=MWdiMTllcDd4ajdxeg==",
               color: "hover:bg-pink-600/20 hover:border-pink-500/50 hover:text-pink-400",
             },
             {
               icon: FaGithub,
-              href: "https://github.com/",
+              href: "https://github.com/cufablangetti",
               color: "hover:bg-gray-600/20 hover:border-gray-500/50 hover:text-white",
             },
           ].map((social, i) => (

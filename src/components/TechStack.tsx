@@ -21,7 +21,7 @@ import {
   SiPostman,
   SiSwagger,
 } from "react-icons/si";
-import { HiServer, HiChartBar } from "react-icons/hi";
+import { HiServer } from "react-icons/hi";
 
 const TechStack = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -95,7 +95,6 @@ const TechStack = () => {
         { name: "Git", icon: FaGitAlt, color: "#F05032", level: 85 },
         { name: "Postman", icon: SiPostman, color: "#FF6C37", level: 80 },
         { name: "Swagger", icon: SiSwagger, color: "#85EA2D", level: 80 },
-        { name: "QlikView", icon: HiChartBar, color: "#009848", level: 70 },
         { name: "Win Server", icon: FaWindows, color: "#0078D6", level: 75 },
         { name: "Kali Linux", icon: FaLinux, color: "#557C94", level: 60 },
       ],
@@ -110,7 +109,6 @@ const TechStack = () => {
       "Gestión de Bases de Datos",
       "Desarrollo Mobile Android",
       "Testing de APIs",
-      "Business Intelligence",
       "ERP SOFTLAND",
     ],
     soft: [
