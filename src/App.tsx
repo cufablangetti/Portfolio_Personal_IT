@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import ScrollProgress from './components/ScrollProgress'
 import CustomCursor from './components/CustomCursor'
+import InteractiveRobot from './components/InteractiveRobot'
 import LoadingScreen from './components/LoadingScreen'
 import ParticlesBackground from './components/ParticlesBackground'
 import SectionDivider from './components/SectionDivider'
@@ -24,6 +25,9 @@ function App() {
 
       {/* Custom Cursor */}
       <CustomCursor />
+
+      {/* EVA floating robot + chat */}
+      <InteractiveRobot />
 
       {/* Scroll Progress Bar */}
       <ScrollProgress />
